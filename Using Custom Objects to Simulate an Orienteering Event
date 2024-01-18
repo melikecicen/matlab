@@ -36,6 +36,8 @@ id = checkWaypoint(id,waypt)
 where waypt is the number of the waypoint.
 
 
+Vectors of Custom Objects TASKLARI;    
+
 Task 1
 % "Insanity" adı, "Red" zorluk seviyesi ve w2 vektöründe saklanan yol noktaları ile yeni bir rota nesnesi oluşturmak için waypoints işlevini kullandım. Bu yeni rotayı c'nin ikinci öğesi olarak saklamak için standart indekslemeyi kullandım.
 c(2) = course("Insanity","Red", w2)
