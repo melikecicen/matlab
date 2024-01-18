@@ -36,4 +36,22 @@ id = checkWaypoint(id,waypt)
 where waypt is the number of the waypoint.
 
 
+Task 1
+% "Insanity" adı, "Red" zorluk seviyesi ve w2 vektöründe saklanan yol noktaları ile yeni bir rota nesnesi oluşturmak için waypoints işlevini kullandım. Bu yeni rotayı c'nin ikinci öğesi olarak saklamak için standart indekslemeyi kullandım.
+c(2) = course("Insanity","Red", w2)
 
+Task 2
+%Seri numaraları [123456, 567890, 987654] olan id adı verilen bir ID stick nesneleri dizisi oluşturmak için idstick işlevini kullandım.
+id = idstick([123456, 567890, 987654])
+
+Task 3
+%Dizi kimliğindeki ilk ID stick'i kullanarak "Astrid"i c'nin ilk öğesiyle temsil edilen Family Fun kursuna kaydetmek için kayıt işlevini kullandım.
+id(1) = register(id(1),"Astrid",c(1))
+
+Task 4
+%Erik'i Family Fun kursuna kaydetmek için registor fonksiyonunu kullandım, ancak dizi kimliğindeki ikinci ID stick'i kullandım. 
+id(2) = register(id(2),"Erik",c(1))
+
+Task 5
+%42 numaralı geçiş noktasında Astrid'in ID stick'ini (kimliğin ilk öğesi) kontrol etmek için checkWaypoint işlevini kullandım.
+id(1) = checkWaypoint(id(1),42)
