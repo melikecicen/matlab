@@ -1,0 +1,39 @@
+Task 1
+c = course("Family Fun","White",w)
+Açıklama :
+course: Course adında bir nesne oluşturuldu.
+Family fun: Baş harfinin büyük olması matlab da sınıf tanımlarken bu şekilde kullanılır aynı zamanda name (kursun adı) özelliği yerine family fun atandı.
+White: Zorluk seviyesi olan difficulty yerine white yani beyaz olduğu yazıldı.
+W: kursa atıf yapılan vektörün ataması yapıldı.
+
+Task 2
+id = idstick(123456)
+Açıklama:Use the idstick function to create an ID stick object called id with the serial number 123456
+
+
+Task 3
+whos
+Açıklama: Use the whos command to see the sizes and types of the variables in your workspace.
+
+Task 4
+properties(id)
+methods(id)
+Açıklama:Use the properties and methods functions to see the names of the properties and methods of the id object
+
+Task 5
+id = register(id,"Astrid",c)
+Açıklama:Use the register function to register "Astrid" for the "Family Fun" course represented by c, using the ID stick id. Update id by assigning the output back to it.
+id = register(id,"Name",c)
+
+
+Task 6
+id = checkWaypoint(id,42)
+Açıklama:
+Use the checkWaypoint function to check Astrid's ID stick (id) at the first waypoint, which is numbered 42. Update id by assigning the output back to it. (You may want to leave off the semicolon at the end of the line so you can see the updated display.)
+As a simple way to simulate the feedback the physical ID stick would give to the participant, the ID stick "beeps" to let you know that the registration was successful. If you left off the semicolon, the display would have also shown that the ID stick is now registered.
+ID stick objects also have a method to simulate a participant checking in at a waypoint.
+id = checkWaypoint(id,waypt)
+where waypt is the number of the waypoint.
+
+
+
