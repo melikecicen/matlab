@@ -1,15 +1,19 @@
 Creating a New Class(2/2) Creating a Class Definition TASKLARI;
+
 Task 1
-% course.m dosyasına course adında bir sınıf tanımladım.
 classdef course
 end
+Task 1 Açıklama:
+classdef: Matlab da sınıf tanımlamak için kullanılır.Burada course adında bır sınıf tanımlandı.
+
 
 Task 2
-% c adında bir kurs nesnesi oluşturdum.
 c = course
+Task 2 Açıklama:
+c: adı altında bir nesne oluşrutruldu,course sınıf adı ile tanımlandı.Yani course adlı bir sınıftan nesne tanımlandı
+
 
 Task 3
-% course.m dosyasına tanımladığım sınıfa özellikler bloğu ekledim.
 classdef course
     properties
         Name
@@ -17,23 +21,29 @@ classdef course
         Waypoints
     end
 end
+Task 3 Açıklama:
+properties:Bir sınıfa ait özellikler için kullanılır Burada ise tanımlanan course sınıfına özellikler tanımlandı(isim,level ve rotaları)
+
+
 
 Task 4
-% c'nin bir level özelliğine sahip olduğunu doğruladım.
 c = course
 lvl = c.Level
+Task 4 Açıklama: Nesne atamasından sonra level özelliğine sahip olduğu doğrulandı.
+
 
 Task 5 
-% c'nin Level özelliğini White dizesine ayarladım.
 c.Level = "White"
+Task 5 Açıklama:Course nesnesine atamış olunan level özelliğinin seviyesinin white olduğu belirtilmiştir.
 
-Task6
-% c'nin Level özelliğini 42 ile değiştirdim.
+
+Task 6
 c.Level = 42
+Task 6 Açıklama:Level özelliğinin seviyesini 42 ile değiştirildi.
+
 
 **Classes Within Classes TASKLARI;
 Task 1
-% idstck.m dosyasında özellikleri olan bir idstick adında sınıf tanımladım.
 classdef idstick
     properties
         SerialNumber
@@ -43,23 +53,31 @@ classdef idstick
         Timestamps
     end
 end
+Task 1 Açıklama:
+idstick: adında bir sınıf tanımlandı.
+properties: ile idstick sınıfına özellikler atandı.(Seri numarası(Serial number), Durum Katılımcı (Status), Kurs(Course), Zaman damgaları(Timestamps)
+
 
 Task 2
-% id adında ID stick nesnesi oluşturdum. SerialNumber özelliğini 1234 olarak ayarladım.
 id = idstick
 id.SerialNumber = 1234
+Task 2 Açıklama:id adında ID stick nesnesi oluşturuldu.SerialNumber özelliği ile kimliği 1234 ile ayarlandı.
+
 
 Task 3 
-% id'nin Course özelliğini c olarak ayarladım.
 id.Course = c
+Task 3 Açıklama:id 'nin course özelilği c olarak atandı.
+
 
 Task 4
-%id'nin Course özelliğindeki course nesnesinin Waypoints özelliğinde saklanan waypoints listesini aldım. Sonucu w adlı bir değişkene kaydettim.
 w = id.Course.Waypoints
+Task 4 Açıklama: w:değişken
+Waypoints:yol noktaları
+id 'nin course nesnesinin yol noktaları özelliğinde saklanan yol noktalarının listesini alınıp sonucu w adlı bir değişkene kaydedildi.
+
 
 **Giving Your Class Functionality(2/3) Adding a Method to a Class TASKLARI;
 Task 1
-% idstick.m dosyasını bir yöntem bloğu ekleyip yöntem bloğuna sinyal adında bir yöntem ekledim.
 classdef idstick
     properties
         SerialNumber
@@ -78,13 +96,18 @@ classdef idstick
         end
     end
 end
+Task 1 Açıklama:
+methods : idstick ile tanımlanmış olan sınıfın yöntemlerini listler.
+funtion signal :ile sinyal yöntemi eklendi
+
+
 
 Task 2
-% Sinyal yöntemini çağırıp ilk gridiyi de idstick nesnesinden id'yi seçtim ve başarılı bir check-in yanıtını simüle etmek için ikinci giriş olarak true değerini kullandım.
 signal(id,true)
+Task 2 Açıklama:Signal yöntemi çağırarak ilk girdiyi idstick nesnesinden id'yi seçip ve başarılı bir check-in yanıtını simüle etmek için ikinci giriş olarak true kullanıldı
+
 
 Task 3 
-% idstick.m dosyasında sinyal yöntemini değiştirdim.
 classdef idstick
     properties
         SerialNumber
@@ -107,10 +130,11 @@ classdef idstick
         end
     end
 end
+Task 3 Açıklama:
+Signal yöntemini yeni değerler atandı.
 
 **Giving Your Class Functionality(3/3) Adding More Methods TASKLARI;
 Task 1
-% idstick.m dosyasına , register adı verilen yeni bir method ekledim.
 classdef idstick
     properties
         SerialNumber
@@ -137,18 +161,24 @@ classdef idstick
         end
     end
 end
+Task 1 Açıklama:
+idstick sınıfına register kaydetme fonksiyonu eklendi bu sayede katılımcı(participant) özelliği ile girilen değer name olarak kaydedilir.
+course ataması ile de girilen değer course olarak kaydedilir.
+
 
 Task 2
-% Course nesnesinde depolanan course'a Erik adındaki katılımcıyı kaydetmek için register yöntemini çağırdım ve sonucu idout adında yeni ID stick nesnesine atadım.
 idout = register(id,"Erik",c)
+Task 2 Açıklama:Erik adında katılımcıyı register yöndemi ile kaydedip sonucu ID nesnesine atandı
+
 
 Task 3 
-% Önce id'nin Participant özelliğinin değerini p1 adlı bir değişkene atadım. Sonra idout'un Participant özelliğinin değerini p2 adlı bir değişkene atadım.
 p1 = id.Participant
 p2 = idout.Participant
+Task 3 Açıklama:
+id'nin Participant özellik değerini p1're atandı.
+idout'un Participant özellik değerini p2 'ye atandı
 
 Task 4 
-% idstick.m dosyasında register yöntemini değiştirdim. Participant ve Course özelliklerini ayarlayıp Status özelliğini Ready olarak ayarladım. Son olarak sinyal yöntemini çağırdım.
 classdef idstick
     properties
         SerialNumber
@@ -177,10 +207,10 @@ classdef idstick
         end
     end
 end
+Task 4 Açıklama:idstick sınıfının register yöntemi değiştirildi.Status özelliğini Ready olarak ayarlandı.Sinyal yöntemi çağırıldı.
 
 **Constructor Methods(2/2) Adding Constructor Methods TASKLARI;
 Task 1 
-% idstick.m dosyasına, snum'u alan constructor yöntemi ekledim. Constructor, ID stick'in SerialNumber özelliğinin değerini snum'a eşit olarak ayarladım.
 classdef idstick
     properties
         SerialNumber
@@ -213,13 +243,13 @@ classdef idstick
         end
     end
 end
+Task 1 Açıklama:idstick'e, snum'u alan constructor yöntemi eklendi.SerialNumber özelliği değeri snum'a eşit olarak ayarladı.
 
 Task 2
-% 54321 seri numaralı id adında bir idstick nesnesi oluşturdum.
 id = idstick(54321)
+Task 2 Açıklama:id adında bir idstick nesnesine 54321 seri numaralı nesne oluşturuldu.
 
 Task 3
-% course.m dosyasına bir methods bloğu, üç girdi alan ve sırayla Name, Level, Waypoints özelliklerine atayan bir yöntem ekledim.
 classdef course
     properties
         Name
@@ -234,14 +264,16 @@ classdef course
         end
     end
 end
+Task 3 Açıklama:
+methods ile course sınıfına Name, Level, Waypoints özelliklerine atayan bir yöntem eklenildi.
+
 
 Task 4
-% Family Fun adında White düzeyinde ve w'de saklanan ara noktalarla c adında bir course nesnesi oluşturdum.
 c = course("Family Fun","White",w);
+Task 4 Açıklama:Family Fun adında White zorluk seviyesinde ve w rotasında saklanan ara noktalarla c adında bir course nesnesi oluşturuldu.
 
 **Overloading and Precedence(5/6) Adding a Custom Display TASKI;
 Task 1
-% course.m dosyasına rota bilgilerini level course 'name' ile numwaypoints ile birlikte görüntüleyen bir disp yöntemi ekledim.
 classdef course
     properties
         Name
@@ -265,3 +297,4 @@ classdef course
         end
     end
 end
+Task 1 Açıklama:course sınıfına rota bilgileri level(c.level), course (c.course),name(c.name), ile(with), numwaypoints(numel(c.Waypoints) + " waypoints") ile birlikte görüntüleyen bir disp yöntemi eklenildi.
