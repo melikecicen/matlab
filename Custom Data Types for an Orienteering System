@@ -3,60 +3,78 @@ Using Custom Objects to Simulate an Orienteering Event TASKLARI ;
 
 Task 1
 c = course("Family Fun","White",w)
-Açıklama :
+Task 1 Açıklama :
 course: Course adında bir nesne oluşturuldu.
 Family fun: Baş harfinin büyük olması matlab da sınıf tanımlarken bu şekilde kullanılır aynı zamanda name (kursun adı) özelliği yerine family fun atandı.
 White: Zorluk seviyesi olan difficulty yerine white yani beyaz olduğu yazıldı.
-W: kursa atıf yapılan vektörün ataması yapıldı.
+W: kursa atıf yapılan vektörün rol ataması yapıldı.
 
 Task 2
 id = idstick(123456)
-Açıklama:Use the idstick function to create an ID stick object called id with the serial number 123456
+Task 2 Açıklama:
+id adı verilen kimlik çubuğuna idstick sınıfı belirtilip bu sınıfa bir nesne ataması yapıldı.
 
 
 Task 3
 whos
-Açıklama: Use the whos command to see the sizes and types of the variables in your workspace.
+Task 3 Açıklama:
+whos:Değişkenlerin boyutlarını ve türlerini görüntülemek için kullanıldı.
+
 
 Task 4
 properties(id)
 methods(id)
-Açıklama:Use the properties and methods functions to see the names of the properties and methods of the id object
+Task 4 Açıklama:
+properties:Nesne veya sınıfın özelliklerinin isimlerini lisetelyen bir fonksiyondur.
+methods:Nesne veya sınıfın yöntemlerini listeleyen bir fonksiyondur.
+
 
 Task 5
 id = register(id,"Astrid",c)
-Açıklama:Use the register function to register "Astrid" for the "Family Fun" course represented by c, using the ID stick id. Update id by assigning the output back to it.
-id = register(id,"Name",c)
+Task 5 Açıklama:
+register:kaydetme fonksiyonudur.Dizi kimliğindeki kimlik çubuğunu kullanarak "Astrid"i Family fun kursuna c adlı bir kurs nesnesini temsil eden id kaydetmek için kayıt işlevi olan register kullanıldı. 
 
 
 Task 6
 id = checkWaypoint(id,42)
-Açıklama:
-Use the checkWaypoint function to check Astrid's ID stick (id) at the first waypoint, which is numbered 42. Update id by assigning the output back to it. (You may want to leave off the semicolon at the end of the line so you can see the updated display.)
-As a simple way to simulate the feedback the physical ID stick would give to the participant, the ID stick "beeps" to let you know that the registration was successful. If you left off the semicolon, the display would have also shown that the ID stick is now registered.
-ID stick objects also have a method to simulate a participant checking in at a waypoint.
-id = checkWaypoint(id,waypt)
-where waypt is the number of the waypoint.
+Task 6 Açıklama:
+checkWaypoint:Kontrol etme fonksiyonudur.Astrid adlı kişilerin özelliklerini belli bir rota da kontol etmek için kullanıldı.Aynı zamanda matlabda bazı fonksiyonlar için özelliklik
+olan noktalı virgül kullanılmayarak güncellenmiş en son hali görünmektedir.
 
 
 Vectors of Custom Objects TASKLARI;    
 
 Task 1
-% "Insanity" adı, "Red" zorluk seviyesi ve w2 vektöründe saklanan yol noktaları ile yeni bir rota nesnesi oluşturmak için waypoints işlevini kullandım. Bu yeni rotayı c'nin ikinci öğesi olarak saklamak için standart indekslemeyi kullandım.
 c(2) = course("Insanity","Red", w2)
+Task 1 Açıklama:
+course: Adında bir nesne oluşturuldu.
+Red: Zorluk seviyesi olan difficulty yerine red yani kırmızı olduğu yazıldı.
+w2:vektöründe saklanan yol noktaları ile yeni bir rota nesnesi oluşturmak için rota işlevi kullanıldı. 
+Bu yeni rotayı c'nin ikinci öğesi olarak saklamak için standart indeksleme kullanıldı c(2).
+
 
 Task 2
-%Seri numaraları [123456, 567890, 987654] olan id adı verilen bir ID stick nesneleri dizisi oluşturmak için idstick işlevini kullandım.
 id = idstick([123456, 567890, 987654])
+Task 2 Açıklama:id adı verilen bir kimlik çubuğu nesneleri dizisi oluşturmak için idstick işlevi kullanıldı.
+
 
 Task 3
-%Dizi kimliğindeki ilk ID stick'i kullanarak "Astrid"i c'nin ilk öğesiyle temsil edilen Family Fun kursuna kaydetmek için kayıt işlevini kullandım.
 id(1) = register(id(1),"Astrid",c(1))
+Task 3 Açıklama:
+register:Kayıt etme fonksiyodur.
+Dizi kimliğindeki ilk kimlik çubuğunu kullanarak "Astrid"i c'nin ilk öğesiyle temsil edilen Family fun kursuna kaydetmek için kayıt işlevi olan register kullanıldı.
+Çıkışı ona geri atayarak kimliği (1) güncellenildi.
 
 Task 4
-%Erik'i Family Fun kursuna kaydetmek için registor fonksiyonunu kullandım, ancak dizi kimliğindeki ikinci ID stick'i kullandım. 
 id(2) = register(id(2),"Erik",c(1))
+Task 4 Açıklama:
+register:Kayıt etme fonksiyonudur.
+Erik'i Family Fun kursuna kaydetmek için de kayıt fonksiyonu olan register kullanıldı, ancak dizi kimliğindeki ikinci kimlik
+çubuğunu kullanıldı. Çıktıyı ona geri atayarak Erik'in kimlik çubuğunu (id(2)) güncellendi.Aynı zamanda Family Fun kursu c'nin ilk unsurudur.) 
+
 
 Task 5
-%42 numaralı geçiş noktasında Astrid'in ID stick'ini (kimliğin ilk öğesi) kontrol etmek için checkWaypoint işlevini kullandım.
 id(1) = checkWaypoint(id(1),42)
+Task 5 Açıklama:
+checkWaypoint:Kontol etme fonksiyonudur.42 numaralı geçiş noktasında Astrid'in kimlik çubuğunu (kimliğin ilk öğesi) kontrol etmek için checkWaypoint işlevini
+kullanıldı. Çıktıyı ona geri atayarak kimlik çubuğunu güncellendi id(1).
