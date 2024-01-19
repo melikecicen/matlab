@@ -1,7 +1,6 @@
 Controlling Access and Behavior 
 **Specifying How Properties Are Stored(2/2) Storing Name, Level, and Waypoints
 Task 1
-% course.m dosyasında, Name ve Level özelliklerinin dizeler halinde, Waypoints özelliğinin çift saklanması gerektiğini belirttim.
  classdef course
     properties
         Name string
@@ -26,9 +25,9 @@ Task 1
         end
     end
 end
+Task 1 Açıklma:course sınıfına , Name ve Level özellikleri atanıp bu özelliklerin dizeler halinde, Waypoints(yol noktaları) özelliğinin ise çift saklanması gerektiği belirtildi.
 
 Task 2
-% course.m dosyasında, Name ve Level özelliklerinin skaler olması gerektiğini ve Waypoints özelliğinin bir sütun olarak saklanması gerektiğini belirttim.
 classdef course
     properties
         Name (1,1) string
@@ -53,9 +52,9 @@ classdef course
         end
     end
 end
+Task 2 Açıklama:course sınıfına, Name ve Level özelliklerinin skaler olması gerektiğini ve Waypoints özelliğinin bir sütun olarak saklanması gerektiği belirtildi.
 
 Task 3
-% course.m dosyasında, Waypoints'in pozitif tam sayılardan oluşması gerektiğini belirtmek için mustBePositive ve mustBeInteger kullandım.
 classdef course
     properties
         Name (1,1) string
@@ -80,9 +79,9 @@ classdef course
         end
     end
 end
+Task 3 Açıklama:course sınıfına, Waypoints'in(yol haritası) pozitif tam sayılardan oluşması gerektiğini belirtmek için mustBePositive ve mustBeInteger kullandı.
 
 Task 4
-% Level'ın  ["White","Yellow","Green","Orange","Red"] biri olması gerektiğini mustBeMember ile belirttim ve bu listeden varsayılan bir değer atadım.
 classdef course
     properties
         Name (1,1) string
@@ -107,11 +106,10 @@ classdef course
         end
     end
 end
+Task 4 Açıklama:Level'ın  ["White","Yellow","Green","Orange","Red"] biri olması gerektiği mustBeMember ile belirtildi ve varsayılan bir depğer ataması yapılaması belirtildi..
 
 **Validating Method Inputs(2/3) Strict Checking of Numbers and Text TASKI;
 Task 1
-% course.m dosyasında, course'a bir arguments bloğu ekleyip, Name'in metin olması gerektiğini, 
-% Waypoints'in sayısal bir değer olması gerektiğini belirtmek için mustBeText(metin için) ve mustBeNumeric(sayısal değer için) kullandım.
 classdef course
     properties
         Name (1,1) string
@@ -141,11 +139,11 @@ classdef course
         end
     end
 end
+Task 1 Açıklama:course sınıfına, course'a bir arguments bloğu eklenildi, Name'in metin olması gerektiği, 
+Waypoints'in sayısal olduğunu belirtmek için mustBeText(metin için) ve mustBeNumeric(sayısal değer için) özellikleri kullanıldı.
 
 **Validating Method Inputs(3/3) Specifying the Properties for the ID Stick TASKLARI;
 Task 1
-% idstick.m dosyasında, SerialNumber'ın skaler uint32, Status'un skaler string, Participant'ın skaler string, Timestamps'ın datetimes sütunu olduğunu belirttim. 
-% Sonra giriş doğrulaması için arguments bloğu ekleyip, geçerli bir seri numarası olduğunu anlamak için mustBeNumeric, mustBePositive ve mustBeInteger kullandım.
 classdef idstick
     properties
         SerialNumber (1,1) uint32
@@ -228,9 +226,10 @@ classdef idstick
         end
     end
 end
+Task 1 Açıklama:idstick sınıfına, SerialNumber'ın skaler özellikte uint32 , Status'un skaler özellikte string, Participant'ın skaler özellikte string, Timestamps'ın datetimes sütunu olduğu belirtildi. 
+giriş doğrulaması için arguments bloğu eklenildi, geçerli bir seri numarası olduğunu anlamak için mustBeNumeric, mustBePositive ve mustBeInteger özellikleri kullanıldı..
 
 Task 2
-% idstick.m dosyasında, if isempty(id.Participant) kodunu if (id.Participant == "") olarak değiştirip idstick'in disp yöntemini değiştirdim.
 classdef idstick
     properties
         SerialNumber (1,1) uint32
@@ -313,9 +312,10 @@ classdef idstick
         end
     end
 end
+Task 2 Açıklama:idstick sınıfına, if isempty(id.Participant) kodunu if (id.Participant == "") olarak değiştirilipp idstick'in disp yöntemi de değiştirildi.
+
 
 Task 3
-% idstick.m dosyasına, Course özelliğinin course türünde olmasını belirtmek için doğrulama ekledim.
 classdef idstick
     properties
         SerialNumber (1,1) uint32
@@ -401,16 +401,15 @@ classdef idstick
         end
     end
 end
+Task 3 Açıklama:idstick sınıfına, Course özelliğinin course türünde olmasını belirtmek için doğrulama eklenildi.
 
 **Default Values and Implicit Method Calls(1/4) Creating a Vector of Courses TASKI;
 Task 1
-% c'nin 2.öğesi olarak, w2'de saklanan waypoints ile  Challenge adında Orange seviyede bir nesne oluşturdum.
 c(2) = course("Challenge","Orange",w2)
-
+Task 1 Açıklma:c'nin 2.öğesi olarak, w2'de saklanan waypoints ile  Challenge adında Orange seviyede bir nesne oluşturuldu.
 
 **Default Values and Implicit Method Calls(3/4) Fixing the Course Constructor TASKLARI;
 Task 1
-% course.m dosyasında, constructor yöntemindeki atamanın sadece üç giriş verildiğinde kullanıldığından emin olmak için if bloğu ekledim.
 classdef course
     properties
         Name (1,1) string
@@ -438,9 +437,9 @@ classdef course
 %         end
     end
 end
+Task 1 Açıklama:course sınıfı, constructor yöntemindeki atamanın sadece üç giriş verildiğinde kullanıldığından emin olmak için if bloğu eklenildi.
 
 Task 2
-% course.m dosyasında, course constructor yöntemine elseif koşulu ekleyip, "3 giriş sağlamanız gerekir." hatası verdirttim.
 classdef course
     properties
         Name (1,1) string
@@ -469,10 +468,11 @@ classdef course
 %         end
     end
 end
+Task 2 Açıklama:course sınıfına, course constructor yöntemine elseif koşulu ekleyip, "3 giriş sağlamanız gerekir." hatası belirttim.
+
 
 **Default Values and Implicit Method Calls(4/4) Fixing the ID Stick Constructor TASKLARI;
 Task 1
-% idstick.m dosyasında, contructor yöntemindeki atamanın sadece 1 girdi girildiğinde çalıştığından emin olmak için if bloğu ekledim.
 classdef idstick
     properties
         SerialNumber (1,1) uint32
@@ -559,9 +559,9 @@ classdef idstick
         end
     end
 end
+Task 1 Açıklama:idstick sınıfına, contructor yöntemindeki atamanın sadece 1 girdi girildiğin de çalıştığından emin olmak için if bloğu eklenildi.
 
 Task 2
-% idstick.m dosyasını, snum dizisinin elemanlarını id yapısının SerialNumber alanına atayan döngü olarak değiştirdim.
 classdef idstick
     properties
         SerialNumber (1,1) uint32
@@ -650,10 +650,10 @@ classdef idstick
         end
     end
 end
+Task 2 Açıklama:idstick sınıfına, snum dizisinin elemanlarını id yapısının SerialNumber alanına atayan döngü olarak değiştirildi.
 
 **Restricting Access to Properties and Methods TASKLARI;
 Task 1
-% course.m dosyasında, course sınıfının özelliklerini özel değere sahip SetAccess özniteliğine sahip olarak değiştirdim.
 classdef course
     properties (SetAccess = private)
         Name (1,1) string
@@ -719,9 +719,9 @@ classdef course
         end
     end
 end
+Task 1 Açıklama:course sınıfına, course sınıfının özelliklerini özel değere sahip SetAccess özniteliğine sahip olarak değiştirildi.
 
 Task 2
-% idstick.m dosyasında, idstick özelliklerini SetAccess'e ayarladım.
 classdef idstick
     properties (SetAccess = private)
         SerialNumber (1,1) uint32
@@ -848,9 +848,9 @@ classdef idstick
         end
     end
 end
+Task 2 Açıklma:idstick sınıfına , idstick özelliklerini SetAccess'e ayarlandı.
 
 Task 3
-% idstick.m dosyasında, yeni properties oluşturup SerialNumber özelliklerini taşıdım. SetAccess niteliğini değişmez olarak değiştirdim.
 classdef idstick
     properties (SetAccess = immutable)
         SerialNumber (1,1) uint32
@@ -979,9 +979,9 @@ classdef idstick
         end
     end
 end
+Task 3 Açıklma:idstick sınıfına, yeni properties oluşturup SerialNumber özelliklerini taşındı.SetAccess niteliğini değişmez olarak değiştirildi.
 
 Task 4
-% idstick.m dosyasında, Access özniteliği özel ayarlanmış yeni özellikler bloğu oluşturup, Status özelliğini buraya atadım.
 classdef idstick
     properties (SetAccess = immutable)
         SerialNumber (1,1) uint32
@@ -1112,9 +1112,9 @@ classdef idstick
         end
     end
 end
+Task 4 Açıklama:idstick sınıfına, Access özniteliği özel ayarlanmış yeni özellikler bloğu oluşturuldu, Status özelliği atandı.
 
 Task 5 
-% idstick.m dosyasında, Access'i özel ayarlanmış bir method bloğu oluşturup, signal ve updateStatus yöntemlerine atadım.
 classdef idstick
     properties (SetAccess = immutable)
         SerialNumber (1,1) uint32
@@ -1248,3 +1248,4 @@ classdef idstick
         end
     end
 end
+Task 5 Açıklama:idstick sınıfına, Access'i özel ayarlanan bir method bloğu oluşturulup, signal ve updateStatus yöntemleri atandı.
